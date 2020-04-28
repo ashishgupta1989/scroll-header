@@ -57,11 +57,14 @@ class App extends React.Component {
     return (
       <>
         {this.state.showheader &&
-          <Headroom className="header" style={{
-            background: 'rgb(57, 111, 176)',
-            boxShadow: '1px 1px 1px rgba(0,0,0,0.25)',
-            height: '10vh'
-          }}
+          <Headroom
+            className="header"
+            upTolerance={0}
+            style={{
+              background: 'rgb(57, 111, 176)',
+              boxShadow: '1px 1px 1px rgba(0,0,0,0.25)',
+              height: '10vh'
+            }}
             parent={this.state.scrollingPanel === 'left' ? this.getLeftScrollElement : this.getRightScrollElement}>
             Test Header
           </Headroom>

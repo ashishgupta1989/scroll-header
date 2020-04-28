@@ -106,7 +106,7 @@ export default class Headroom extends Component {
             }
         }
         else if (prevProps.parent !== this.props.parent) {
-            console.log('parent changed')
+            this.lastKnownScrollY = this.getScrollY()
             prevProps.parent().removeEventListener('scroll', this.handleScroll)
             this.props.parent().addEventListener('scroll', this.handleScroll)
         }
@@ -251,7 +251,6 @@ export default class Headroom extends Component {
     }
 
     update = () => {
-        debugger
         this.currentScrollY = this.getScrollY()
 
         if (!this.isOutOfBound(this.currentScrollY)) {
